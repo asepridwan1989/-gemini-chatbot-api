@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Frontend</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-messages" id="chatMessages">
+            <!-- Chat messages will be appended here -->
+            <div class="ai-message message">Hello! How can I assist you today?</div>
+        </div>
+        <div class="loading-indicator" id="loadingIndicator">Typing...</div>
+        <form class="chat-input-form" id="chatForm">
+            <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

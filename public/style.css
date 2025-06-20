@@ -1,0 +1,145 @@
+/* style.css */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80vh; /* Adjust height for better viewing */
+    max-height: 700px;
+}
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #e9ecef;
+}
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    word-wrap: break-word;
+    position: relative; /* Needed for positioning copy button */
+}
+.user-message {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+.ai-message {
+    align-self: flex-start;
+    background-color: #f8f9fa;
+    color: #343a40;
+    border: 1px solid #dee2e6;
+    border-bottom-left-radius: 2px;
+}
+
+/* Styles for Code Blocks */
+.code-block-container {
+    background-color: #2d2d2d; /* Dark background for code */
+    color: #f8f8f2; /* Light text color */
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling for long lines */
+    position: relative; /* For copy button positioning */
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+.code-block-container pre {
+    margin: 0;
+    padding: 0;
+    white-space: pre-wrap; /* Wrap long lines if possible */
+    word-break: break-all; /* Break words to prevent overflow */
+}
+
+.code-block-container code {
+    display: block; /* Ensures code takes full width */
+}
+
+.copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8em;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+}
+
+.code-block-container:hover .copy-button {
+    opacity: 1; /* Show on hover */
+}
+
+.copy-button:active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Original styles for input form and loading indicator */
+.chat-input-form {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    background-color: #ffffff;
+}
+.chat-input-form input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+}
+.chat-input-form input[type="text"]:focus {
+    border-color: #007bff;
+}
+.chat-input-form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.1s;
+}
+.chat-input-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+.chat-input-form button:active {
+    transform: translateY(1px);
+}
+.loading-indicator {
+    display: none;
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+    color: #6c757d;
+}
